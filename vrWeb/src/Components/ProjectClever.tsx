@@ -4,12 +4,13 @@ import "../App.css";
 const ProjectClever = () => {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
+
   const [comments, setComments] = useState([]);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const handleSubmit = () => {
+    // event.preventDefault();
     const newComment = { name, comment };
-    setComments([...comments, newComment]);
+    //setComments([...comments, newComment]);
     setName("");
     setComment("");
   };
@@ -54,8 +55,8 @@ const ProjectClever = () => {
               <h2>Comments</h2>
               {comments.map((comment, index) => (
                 <div key={index}>
-                  <h5>{comment.name}</h5>
-                  <p>{comment.comment}</p>
+                  {/* <h5>{comment.name}</h5>
+                  <p>{comment.comment}</p> */}
                 </div>
               ))}
               <Form onSubmit={handleSubmit}>
